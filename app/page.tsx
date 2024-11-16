@@ -1,10 +1,15 @@
 "use client";
 
-// pages/index.tsx
 import { useState } from "react";
 import Question from "./components/Question";
 import Result from "./components/Result";
 import { careers, questions } from "./utils/career";
+
+interface Career {
+  title: string;
+  description: string;
+  traits: string[];
+}
 
 const IndexPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -35,7 +40,7 @@ const IndexPage = () => {
       }
     });
 
-    let bestCareer = careers[0];
+    let bestCareer: Career = careers[0]; // Specify the type of bestCareer
     let maxScore = 0;
 
     careers.forEach((career) => {
