@@ -61,4 +61,7 @@ export const questions = [
     { question: "Do you like working with children?", options: ["Yes", "No"], trait: "empathetic" },
     { question: "Do you enjoy working with technology?", options: ["Yes", "No"], trait: "technical" },
     { question: "Are you interested in marine life?", options: ["Yes", "No"], trait: "nature-oriented" },
+    { question: "Do you enjoy working with data and solving puzzles?", options: ["Yes", "No"], trait: "analytical" },
+    { question: "Do you like working with technology and coding?", options: ["Yes", "No"], trait: "technical" },
+    { question: "Are you good at explaining complex ideas to others?", options: ["Yes", "No"], trait: "communicative" },
 ];

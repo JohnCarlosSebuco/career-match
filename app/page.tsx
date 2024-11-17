@@ -29,33 +29,34 @@ const IndexPage = () => {
 
   const calculateResults = () => {
     const traitScores: Record<string, number> = {};
-
+  
+    // Calculate trait scores based on user responses
     questions.forEach((question, index) => {
       if (responses[index] === "Yes") {
         const trait = question.trait;
-        if (traitScores[trait]) {
-          traitScores[trait] += 1;
-        } else {
-          traitScores[trait] = 1;
-        }
+        traitScores[trait] = (traitScores[trait] || 0) + 1;
       }
     });
-
+  
+    // Score careers based on matching traits
     const scoredCareers = careers.map((career) => {
+      const weight = career.traits.length; // Normalize based on the number of traits
       const score = career.traits.reduce(
         (acc, trait) => acc + (traitScores[trait] || 0),
         0
       );
-      return { ...career, score };
+      return { ...career, score: score / weight }; // Normalize score
     });
-
-    // Sort careers by score in descending order
+  
+    // Find top matches
     const topCareers = scoredCareers
       .sort((a, b) => b.score - a.score)
-      .slice(0, 3); // Take top 3 careers
-
+      .filter((career) => career.score > 0) // Only show careers with scores
+      .slice(0, 3);
+  
     setResults(topCareers);
   };
+  
 
   const resetQuiz = () => {
     setCurrentQuestion(0);

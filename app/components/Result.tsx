@@ -1,31 +1,36 @@
+import React from "react";
+
+interface Career {
+  title: string;
+  description: string;
+  score: number; // Score as a value between 0 and 1
+}
+
 interface ResultProps {
-  careers: {
-    title: string;
-    description: string;
-    score: number;
-  }[];
+  careers: Career[];
   resetQuiz: () => void;
 }
 
-const Result: React.FC<ResultProps> = ({ careers, resetQuiz }) => {
+const Result = ({ careers, resetQuiz }: ResultProps) => {
   return (
-    <div className="text-center">
-      <h1 className="text-2xl font-bold mb-4">Your Top 3 Career Matches</h1>
-      <ul className="space-y-4">
-        {careers.map((career, index) => (
-          <li key={index} className="border p-4 rounded-lg shadow">
-            <h2 className="text-xl font-semibold">{career.title}</h2>
-            <p className="text-sm text-gray-600">{career.description}</p>
-            <p className="text-sm font-bold">Score: {career.score}</p>
+    <div>
+      <h1 className="text-2xl font-bold mb-4 text-center">Your Top Career Matches</h1>
+      <ul className="list-disc pl-5 mb-4">
+        {careers.map((career) => (
+          <li key={career.title} className="mb-2">
+            <strong>{career.title}</strong>: {career.description} <br />
+            Match Score: {Math.min(career.score * 100, 100).toFixed(0.1)}%
           </li>
         ))}
       </ul>
-      <button
-        className="mt-6 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
-        onClick={resetQuiz}
-      >
-        Take Quiz Again
-      </button>
+      <div className="text-center">
+        <button
+          onClick={resetQuiz}
+          className="bg-blue-500 text-white px-4 py-2 rounded text-center hover:bg-blue-600"
+        >
+          Try Again
+        </button>
+      </div>
     </div>
   );
 };
