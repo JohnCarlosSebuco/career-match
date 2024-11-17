@@ -9,12 +9,13 @@ interface Career {
   title: string;
   description: string;
   traits: string[];
+  score: number;
 }
 
 const IndexPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [responses, setResponses] = useState<string[]>([]);
-  const [result, setResult] = useState<{ career: string; description: string } | null>(null);
+  const [results, setResults] = useState<Career[] | null>(null);
 
   const handleAnswer = (answer: string) => {
     setResponses((prev) => [...prev, answer]);
@@ -22,11 +23,11 @@ const IndexPage = () => {
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      calculateResult();
+      calculateResults();
     }
   };
 
-  const calculateResult = () => {
+  const calculateResults = () => {
     const traitScores: Record<string, number> = {};
 
     questions.forEach((question, index) => {
@@ -40,25 +41,26 @@ const IndexPage = () => {
       }
     });
 
-    let bestCareer: Career = careers[0]; // Specify the type of bestCareer
-    let maxScore = 0;
-
-    careers.forEach((career) => {
-      const score = career.traits.reduce((acc, trait) => acc + (traitScores[trait] || 0), 0);
-
-      if (score > maxScore) {
-        maxScore = score;
-        bestCareer = career;
-      }
+    const scoredCareers = careers.map((career) => {
+      const score = career.traits.reduce(
+        (acc, trait) => acc + (traitScores[trait] || 0),
+        0
+      );
+      return { ...career, score };
     });
 
-    setResult({ career: bestCareer.title, description: bestCareer.description });
+    // Sort careers by score in descending order
+    const topCareers = scoredCareers
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3); // Take top 3 careers
+
+    setResults(topCareers);
   };
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
     setResponses([]);
-    setResult(null);
+    setResults(null);
   };
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -66,8 +68,8 @@ const IndexPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
       <div className="bg-white text-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full">
-        {result ? (
-          <Result career={result.career} description={result.description} resetQuiz={resetQuiz} />
+        {results ? (
+          <Result careers={results} resetQuiz={resetQuiz} />
         ) : (
           <>
             {/* Progress Bar */}
