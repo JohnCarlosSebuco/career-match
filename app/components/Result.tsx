@@ -28,7 +28,7 @@ const Result = ({ careers, resetQuiz }: ResultProps) => {
           onClick={resetQuiz}
           className="bg-blue-500 text-white px-4 py-2 rounded text-center hover:bg-blue-600"
         >
-          Try Again
+          Take Quiz Again
         </button>
       </div>
     </div>
