@@ -49,7 +49,7 @@ const IndexPage = () => {
     const topCareers = scoredCareers
       .sort((a, b) => b.score - a.score)
       .filter((career) => career.score > 0)
-      .slice(0, 3);
+      .slice(0, 4);
 
     setResults(topCareers);
   };

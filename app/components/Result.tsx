@@ -13,7 +13,7 @@ interface ResultProps {
 
 const Result = ({ careers, resetQuiz }: ResultProps) => {
   return (
-    <div className="text-center">
+    <div className="text-center ">
       <h2 className="text-3xl font-bold mb-6 text-black">
         Your Top Career Matches
       </h2>
