@@ -63,7 +63,7 @@ const IndexPage = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen flex flex-col items-center animate-gradient bg-gradient-to-br justify-center from-purple-500 via-blue-500 to-green-400 text-white">
+    <div className="min-h-screen flex flex-col items-center animate-gradient bg-gradient-to-br sm:justify-center from-purple-500 via-blue-500 to-green-400 text-white">
       <header className="py-10 text-center">
         <h1 className="text-4xl font-bold mb-4">Discover Your Ideal Career Path</h1>
         <p className="text-lg max-w-3xl mx-auto">
