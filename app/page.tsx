@@ -64,9 +64,9 @@ const IndexPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center animate-gradient bg-gradient-to-br sm:justify-center from-purple-500 via-blue-500 to-green-400 text-white">
-      <header className="py-10 text-center mt-2 sm:mt-0">
-        <h1 className="text-4xl font-bold mb-4">Discover Your Ideal Career Path</h1>
-        <p className="text-lg max-w-3xl mx-auto">
+      <header className="pt-8 pb-5 text-center mt-2 sm:mt-0">
+        <h1 id='htitle' className="text-4xl font-bold mb-4">Discover Your Ideal Career Path</h1>
+        <p id='descrip' className="text-lg max-w-3xl mx-auto">
           Take a quick quiz and unlock personalized career recommendations based on your traits and preferences.
         </p>
       </header>
