@@ -29,34 +29,30 @@ const IndexPage = () => {
 
   const calculateResults = () => {
     const traitScores: Record<string, number> = {};
-  
-    // Calculate trait scores based on user responses
+
     questions.forEach((question, index) => {
       if (responses[index] === "Yes") {
         const trait = question.trait;
         traitScores[trait] = (traitScores[trait] || 0) + 1;
       }
     });
-  
-    // Score careers based on matching traits
+
     const scoredCareers = careers.map((career) => {
-      const weight = career.traits.length; // Normalize based on the number of traits
+      const weight = career.traits.length;
       const score = career.traits.reduce(
         (acc, trait) => acc + (traitScores[trait] || 0),
         0
       );
-      return { ...career, score: score / weight }; // Normalize score
+      return { ...career, score: score / weight };
     });
-  
-    // Find top matches
+
     const topCareers = scoredCareers
       .sort((a, b) => b.score - a.score)
-      .filter((career) => career.score > 0) // Only show careers with scores
+      .filter((career) => career.score > 0)
       .slice(0, 3);
-  
+
     setResults(topCareers);
   };
-  
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
@@ -67,22 +63,26 @@ const IndexPage = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
-      <div className="bg-white text-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full">
+    <div className="min-h-screen flex flex-col items-center animate-gradient bg-gradient-to-br justify-center from-purple-500 via-blue-500 to-green-400 text-white">
+      <header className="py-10 text-center">
+        <h1 className="text-4xl font-bold mb-4">Discover Your Ideal Career Path</h1>
+        <p className="text-lg max-w-3xl mx-auto">
+          Take a quick quiz and unlock personalized career recommendations based on your traits and preferences.
+        </p>
+      </header>
+
+      <main className="w-full max-w-2xl bg-white text-gray-800 p-8 rounded-lg shadow-lg">
         {results ? (
           <Result careers={results} resetQuiz={resetQuiz} />
         ) : (
           <>
-            {/* Progress Bar */}
-            <div className="w-full h-4 bg-gray-300 rounded-full overflow-hidden mb-4">
+            <div className="w-full bg-gray-300 rounded-full overflow-hidden mb-3">
               <div
-                className="h-full bg-blue-500"
+                className="bg-gradient-to-r from-green-400 to-blue-500 h-4 transition-all duration-300"
                 style={{ width: `${progress}%` }}
                 aria-label="Progress"
               ></div>
             </div>
-
-            {/* Question Component */}
             <Question
               question={questions[currentQuestion].question}
               options={questions[currentQuestion].options}
@@ -90,7 +90,11 @@ const IndexPage = () => {
             />
           </>
         )}
-      </div>
+      </main>
+
+      <footer className="py-6 text-sm text-gray-200">
+        &copy; {new Date().getFullYear()} Role Selector. All rights reserved.
+      </footer>
     </div>
   );
 };
