@@ -13,7 +13,7 @@ const Question: React.FC<QuestionProps> = ({ question, options, onAnswer }) => {
       <div className="h-24 flex items-center justify-center">
         <h2 className="text-2xl font-bold">{question}</h2>
       </div>
-      <div className="mt-3 flex justify-center gap-4">
+      <div className="mt-4 sm:mt-0 flex justify-center gap-4">
         {options.map((option) => (
           <button
             key={option}
