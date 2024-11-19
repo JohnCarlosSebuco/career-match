@@ -65,7 +65,7 @@ export default function RootLayout({
           content="Take the Role Selector quiz to find out which career suits you best. Personalized recommendations based on your unique traits."
         />
         <meta property="og:url" content="https://www.role-selector.com" />
-        <meta property="og:image" content="/assets/og-image.png" />
+        <meta property="og:image" content="https://roleselector.vercel.app/favicon.ico" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:title"
@@ -75,7 +75,7 @@ export default function RootLayout({
           property="twitter:description"
           content="Take the Role Selector quiz to discover your ideal career based on your traits."
         />
-        <meta property="twitter:image" content="/assets/og-image.png" />
+        <meta property="twitter:image" content="https://roleselector.vercel.app/favicon.ico" />
         <meta name="google-site-verification" content="Nk1U8tDMWpH5xbr20J5VH8-lhu5hbV1Y8SPLqvOIIoM" />
         <link rel="canonical" href="https://www.role-selector.com" />
         <script type="application/ld+json">
