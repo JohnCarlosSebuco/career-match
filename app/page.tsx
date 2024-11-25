@@ -90,8 +90,8 @@ const IndexPage = () => {
         ) : currentQuestion === -1 ? (
           <div className="text-center">
             {/* Text and Button */}
-            <h2 className="text-2xl font-bold mb-4 mt-10 mx-1">
-              Find your ideal career in just 1 minute. <br />Click START to begin!
+            <h2 className="text-2xl font-bold mb-4 mt-10 md:mx-1">
+              Find ideal career in just 1 minute. <br />Click START to begin!
             </h2>
             <button
               onClick={() => setCurrentQuestion(0)}
