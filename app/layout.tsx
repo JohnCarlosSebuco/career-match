@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Role Selector | Discover Your Ideal Career Path",
     description:
       "Take the Role Selector quiz to find out which career suits you best. Personalized recommendations based on your unique traits.",
-    url: "https://www.role-selector.com",
+    url: "https://www.roleselector.xyz",
     images: [
       {
         url: "/assets/og-image.png",
@@ -64,8 +64,8 @@ export default function RootLayout({
           property="og:description"
           content="Take the Role Selector quiz to find out which career suits you best. Personalized recommendations based on your unique traits."
         />
-        <meta property="og:url" content="https://www.role-selector.com" />
-        <meta property="og:image" content="https://roleselector.vercel.app/favicon.ico" />
+        <meta property="og:url" content="https://www.roleselector.xyz" />
+        <meta property="og:image" content="https://roleselector.xyz/favicon.ico" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:title"
@@ -75,9 +75,9 @@ export default function RootLayout({
           property="twitter:description"
           content="Take the Role Selector quiz to discover your ideal career based on your traits."
         />
-        <meta property="twitter:image" content="https://roleselector.vercel.app/favicon.ico" />
+        <meta property="twitter:image" content="https://roleselector.xyz/favicon.ico" />
         <meta name="google-site-verification" content="Nk1U8tDMWpH5xbr20J5VH8-lhu5hbV1Y8SPLqvOIIoM" />
-        <link rel="canonical" href="https://www.role-selector.com" />
+        <link rel="canonical" href="https://www.roleselector.xyz" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -85,14 +85,14 @@ export default function RootLayout({
             name: "Role Selector",
             description:
               "Discover your ideal career with Role Selector. A quiz-based app to find the career that matches your traits and preferences.",
-            url: "https://www.role-selector.com",
+            url: "https://www.roleselector.xyz",
             author: {
               "@type": "Organization",
               name: "Role Selector",
             },
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://www.role-selector.com?q={search_term_string}",
+              target: "https://www.roleselector.xyz?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           })}
