@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Custom404 = () => (
   <div className="min-h-screen flex flex-col items-center justify-center animate-gradient bg-gradient-to-br from-purple-500 via-blue-500 to-green-400 text-white">
     <header className="text-center">
@@ -15,13 +17,13 @@ const Custom404 = () => (
       </p>
     </header>
     <main className="mt-6">
-      <a
+      <Link
         href="/"
         className="bg-blue-500 text-white py-2 px-8 rounded-lg text-lg hover:bg-blue-600 transition"
         style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.4)" }}
       >
         Go back to the homepage
-      </a>
+      </Link>
     </main>
     <footer
       className="mt-10 text-sm text-gray-200"
