@@ -9,11 +9,8 @@ const Custom404 = () => (
       >
         404
       </h1>
-      <p
-        className="text-xl mt-4"
-        style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.4)" }}
-      >
-        Oops! The page you're looking for doesn't exist.
+      <p className="text-xl mt-4" style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.4)" }}>
+        Oops! The page you&apos;re looking for doesn&apos;t exist.
       </p>
     </header>
     <main className="mt-6">

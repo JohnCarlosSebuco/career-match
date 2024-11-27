@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -82,17 +83,21 @@ export default function RootLayout({
         <meta property="twitter:image" content="https://roleselector.xyz/favicon.ico" />
         <meta name="google-site-verification" content="Nk1U8tDMWpH5xbr20J5VH8-lhu5hbV1Y8SPLqvOIIoM" />
         <link rel="canonical" href="https://www.roleselector.xyz" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T89CEQZW60"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-T89CEQZW60');
-            `,
-          }}
-        ></script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T89CEQZW60"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-T89CEQZW60');
+          `}
+        </Script>
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
