@@ -65,7 +65,7 @@ const IndexPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center animate-gradient bg-gradient-to-br sm:justify-center from-purple-500 via-blue-500 to-green-400 text-white">
-      <header className="pt-8 pb-5 text-center mt-2 sm:mt-0">
+      <header className="pt-8 pb-5 text-center mt-2 sm:mt-20">
         <h1 id="htitle" className="text-4xl font-bold mb-4">
           Discover Your Ideal Career Path
         </h1>
@@ -74,7 +74,7 @@ const IndexPage = () => {
         </p>
       </header>
 
-      <main className="w-full max-w-2xl bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+      <main className="w-full max-w-2xl bg-white text-gray-800 p-8 rounded-lg shadow-lg mb-5">
         {/* Progress Bar */}
         {!results && (
           <div className="w-full bg-gray-300 rounded-full overflow-hidden mb-3">
@@ -109,7 +109,14 @@ const IndexPage = () => {
         )}
       </main>
 
-
+      {/*Native Banner Ads*/}
+      <script
+          async
+          data-cfasync="false"
+          src="//pl25097143.profitablecpmrate.com/ac623b2dfb6c82431e0b61778a308e9d/invoke.js"
+        ></script>
+        <div id="container-ac623b2dfb6c82431e0b61778a308e9d"></div>
+        
       <footer className="py-6 text-sm text-gray-200">
         &copy; {new Date().getFullYear()} Role Selector. All rights reserved.
       </footer>

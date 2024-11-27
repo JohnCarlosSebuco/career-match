@@ -122,6 +122,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+          {/* Social Bar Script */}
+          <Script
+            type="text/javascript"
+            src='//pl25098579.profitablecpmrate.com/a4/ea/b2/a4eab20a56af5d7eb06232bcbf510d62.js'
+            strategy="afterInteractive"
+          ></Script>
       </body>
     </html>
   );
