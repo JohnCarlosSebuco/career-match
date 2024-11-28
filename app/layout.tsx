@@ -58,7 +58,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Find out your perfect career match with Role Selector. Answer a few questions to unlock personalized career recommendations based on your traits and preferences."
+          content="Find out your perfect career match with Role Selector. Answer few questions to unlock personalized career recommendations based on your traits and preferences."
         />
         <meta
           name="keywords"
