@@ -65,10 +65,6 @@ export default function RootLayout({
           content="career selector, career finder, career quiz, role selector, discover career, career advice, career options"
         />
         <meta property="og:title" content="Role Selector | Discover Your Ideal Career Path" />
-        <meta
-          property="og:description"
-          content="Take the Role Selector quiz to find out which career suits you best. Personalized recommendations based on your unique traits."
-        />
         <meta property="og:url" content="https://www.roleselector.xyz" />
         <meta property="og:image" content="https://roleselector.xyz/favicon.ico" />
         <meta property="twitter:card" content="summary_large_image" />
