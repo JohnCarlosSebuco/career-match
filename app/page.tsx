@@ -110,12 +110,12 @@ const IndexPage = () => {
       </main>
 
       {/*Native Banner Ads*/}
-      {/* <script
+      <script
           async
           data-cfasync="false"
           src="//pl25097143.profitablecpmrate.com/ac623b2dfb6c82431e0b61778a308e9d/invoke.js"
         ></script>
-        <div id="container-ac623b2dfb6c82431e0b61778a308e9d"></div> */}
+        <div id="container-ac623b2dfb6c82431e0b61778a308e9d"></div>
         
       <footer className="py-6 text-sm text-gray-200">
         &copy; {new Date().getFullYear()} Role Selector. All rights reserved.
